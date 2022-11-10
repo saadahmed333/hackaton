@@ -20,12 +20,15 @@ function signup() {
         createUserWithEmailAndPassword(auth, signupEmail.value, signupPassword.value)
   .then((userCredential) => {
     const user = userCredential.user;
-    window.location = ""
+    window.location = "../index.html"
+    fullName.value = "";
+    signupEmail.value = "";
 })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
+    console.log(errorCode);
+    console.log(errorMessage);
   });
     }
 }
