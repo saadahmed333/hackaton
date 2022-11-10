@@ -15,32 +15,48 @@
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+            <span class="text-red-600 hidden" id="Namecheck">please fill this field</span>
             <input 
                 type="text"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
                 name="fullname"
-                placeholder="Full Name" />
+                placeholder="Full Name" 
+                id="full-name"
+                />
 
+                <span class="text-red-600 hidden" id="emailcheck">please fill this field</span>
             <input 
                 type="text"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
                 name="email"
-                placeholder="Email" />
+                placeholder="Email" 
+                id="signup-email"
+                onblur="checkEmail(this.value)"
 
+                />
+
+                <span class="text-red-600 hidden" id="passcheck">Minimum eight characters, at least one letter and one number:</span>
             <input 
                 type="password"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
                 name="password"
-                placeholder="Password" />
+                placeholder="Password"
+                id="signup-password"
+                onblur="checkPassword(this.value)"
+                />
+                <span class="text-red-600 hidden" id="confirmCheck">Password not equal to Confirm Password</span>
             <input 
                 type="password"
                 class="block border border-grey-light w-full p-3 rounded mb-4"
                 name="confirm_password"
-                placeholder="Confirm Password" />
+                placeholder="Confirm Password" 
+                id="signup-confirm-password"
+                />
 
             <button
                 type="submit"
                 class="w-full text-center py-3 rounded bg-green-500 text-white font-bold hover:text-black focus:outline-none my-1"
+                id="signup-button"
             >Create Account</button>
 
             <div class="text-center text-sm text-grey-dark mt-4">
@@ -62,5 +78,7 @@
         </div>
     </div>
 </div>
+
+<script src="../js/signup.js" type="module"></script>
 </body>
 </html>
