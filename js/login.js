@@ -2,7 +2,7 @@
 
 
 import { auth , signInWithEmailAndPassword } from "./firebase-config.js";
-
+import {onAuthStateChanged} from "./firebase-config.js"
 
 let loginEmail = document.getElementById("loginEmail");
 let loginPassword = document.getElementById("loginPassword");
@@ -71,3 +71,16 @@ function checkPassword(str) {
 window.checkPassword = checkPassword;
 
 // Login password regex end
+
+
+
+
+window.onload = onAuthStateChanged(auth, (user) => {
+    if(user){
+      const uid = user.uid;
+      console.log(uid)
+      console.log("haga")
+    }else{
+      console.log(false)
+    }
+  })

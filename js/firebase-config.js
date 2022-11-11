@@ -1,18 +1,37 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+ // Import the functions you need from the SDKs you need
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+ // TODO: Add SDKs for Firebase products that you want to use
+ // https://firebase.google.com/docs/web/setup#available-libraries
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyBF9AwSVNvNzOsm5X9uqz6MbtzwJbzvqCE",
-    authDomain: "hackaton-74144.firebaseapp.com",
-    projectId: "hackaton-74144",
-    storageBucket: "hackaton-74144.appspot.com",
-    messagingSenderId: "534241085328",
-    appId: "1:534241085328:web:d110cb7d33827c12131515"
-  };
+ // Your web app's Firebase configuration
+ const firebaseConfig = {
+   apiKey: "AIzaSyB1BhGQephXBZMGZVtJN-a7wQ0oA2JdouQ",
+   authDomain: "hackaton-project-f35c6.firebaseapp.com",
+   projectId: "hackaton-project-f35c6",
+   storageBucket: "hackaton-project-f35c6.appspot.com",
+   messagingSenderId: "93476652239",
+   appId: "1:93476652239:web:2f003cf096ce9c818463ba"
+ };
 
-  const app = initializeApp(firebaseConfig);
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
 
 
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-export const auth = getAuth(app);
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+  import { getStorage , ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js";
+  import { doc, setDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js"; 
+  export const auth = getAuth(app);
+  const storage = getStorage(app);
+  export const db = getFirestore();
 export {createUserWithEmailAndPassword}
 export {signInWithEmailAndPassword}
+export {onAuthStateChanged}
+export {storage}
+export {ref}
+export {uploadBytesResumable}
+export {getDownloadURL, uploadBytes}
+export {doc, setDoc}
+
+
+
+
